@@ -1,24 +1,17 @@
 import type { NextPage } from "next/types"
-import Head from "next/head"
-
+import { 
+  ChakraProvider,
+  Heading,
+  Button,
+} from "@chakra-ui/react"
 
 
 const Home : NextPage = () => {
   return (
-    <>
-
-      <Head>
-        <title>On Purpose</title>
-      </Head>
-      
-      <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-      }}>
-        <h1>Hello World</h1>
-      </div>
-    </>
+    <ChakraProvider>
+      <Heading>Hello World</Heading>
+      <Button>sfdsf </Button>
+    </ChakraProvider>
   )
 }
 
