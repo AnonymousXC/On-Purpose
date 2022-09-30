@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;800&display=swap');
+
+
+body {
+    font-family: 'inter', serif !important;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.Typewriter {
+    font-weight: 800;
+    font-size: xx-large;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    user-select: none;
+}
+
+.Typewriter__cursor {
+    color: #007bff;
+}
+
+.quote-poet-name {
+    color: #007bff;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+}
