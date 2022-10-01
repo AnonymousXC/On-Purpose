@@ -1,16 +1,25 @@
 import type { NextPage } from "next/types"
 import Head from "next/head"
-import NavBar from "../components/NavBar"
+import { useEffect } from "react"
+import NavBar from "../components/global/NavBar"
 import TypewriterComponent from "typewriter-effect"
 import { 
   ChakraProvider,
   Image,
   Flex,
-  Box
+  Box,
+  useColorMode,
 } from "@chakra-ui/react"
 
 
 const Home : NextPage = () => {
+
+  const { setColorMode } = useColorMode()
+
+  useEffect(() => {
+    setColorMode("dark")
+  }, [])
+
   return (
     <ChakraProvider>
 

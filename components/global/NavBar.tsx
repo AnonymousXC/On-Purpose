@@ -1,8 +1,12 @@
 import { 
     Flex,
     Heading,
-    Link
+    Link,
+    Button
 } from "@chakra-ui/react";
+import {
+    HamburgerIcon
+} from "@chakra-ui/icons"
 import type { NextComponentType } from "next";
 import NextLink from "next/link"
 import { useEffect, useState } from "react";
@@ -10,7 +14,10 @@ import { useEffect, useState } from "react";
 
 const NavBar : NextComponentType = () => {
     return (
-        <NavDesktop />
+        <>
+            <NavDesktop />
+            <NavMobile />
+        </>
     )
 }
 
@@ -76,5 +83,46 @@ const NavDesktop : NextComponentType = () => {
       </Flex>
     )
 }
+
+
+const NavMobile : NextComponentType = () => {
+
+    // const [ getNavBGMob, setNavBGMob] = useState("")
+
+    // useEffect(() => {
+
+    //     document.body.onscroll = (e) => {
+    //         if(window.scrollY > 85)
+    //             setNavBGMob("#181818")
+    //         else
+    //             setNavBGMob("transparent")
+    //     }
+
+    // }, [])
+
+
+    return (
+
+        <Flex
+        w={"full"}
+        display={["flex", "flex", "none", "none"]}
+        alignItems="center"
+        justifyContent={["space-between", "space-around"]}
+        position="fixed"
+        py={4}
+        // backgroundColor={getNavBG}
+        zIndex={10}
+        px={[4, 0]}
+        transition="all 200ms">
+            <Button backgroundColor={"transparent"}> <HamburgerIcon fontSize={25} /> </Button>
+            <Heading display={["none", "block", "block", "block"]}>On Purpose</Heading>
+            <NextLink href={"#"}>
+                <Link>Sign Up &rarr;</Link>
+            </NextLink>
+        </Flex>
+
+    )
+}
+
 
 export default NavBar
